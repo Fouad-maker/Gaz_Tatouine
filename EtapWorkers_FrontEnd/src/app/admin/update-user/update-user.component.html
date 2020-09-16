@@ -1,0 +1,136 @@
+<div class="bg-primary">
+	<div id="layoutAuthentication">
+		<div id="layoutAuthentication_content">
+			<main>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-7">
+							<div class="card shadow-lg border-0 rounded-lg mt-5">
+								<div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+								<div class="card-body">
+										<div class="form-row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1">First Name</label>
+													<input  [(ngModel)]="user.nom" type="text"  class="form-control py-4" />
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1">Last Name</label>
+													<input   [(ngModel)]="user.prenom" type="text"  class="form-control py-4" />
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1">UserName</label>
+													<input   [(ngModel)]="user.username" type="text" class="form-control py-4" />
+												</div>
+											</div>
+
+										</div>
+
+										<div class="form-row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1" >Phone Number</label>
+													<input  [(ngModel)]="user.tel" type="number"  class="form-control py-4"  />
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1">BirthDay</label>
+													<input  [(ngModel)]="user.dateBirdh" type="date"  class="form-control py-4"  />
+												</div>
+											</div>
+											
+										</div>
+										<div class="form-row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1">Place Of Birth</label>
+													<input [(ngModel)]="user.placeOfBirth" type="text"  class="form-control py-4" />
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1">Date Join the project</label>
+													<input  [(ngModel)]="user.dateRejointProjet" type="date"  class="form-control py-4"  />
+												</div>
+											</div>
+											
+										</div>
+										
+										<div class="form-group">
+											<label class="small mb-1">Email</label>
+											<input  [(ngModel)]="user.email" type="email"   class="form-control py-4" />
+										</div>
+
+										<div class="form-row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1" >Qualification</label>
+													<input  [(ngModel)]="user.qualification" type="text"  class="form-control py-4" />
+												</div>
+												<div class="form-group">
+													<label class="small mb-1" >State</label>
+													<select  [(ngModel)]="user.state" class="form-control form-control-lg">
+
+													<option value="Stopped">Stopped</option>
+													<option value="Holiday" >Holiday</option>
+													<option value="Working">Working</option>
+													</select>												
+												</div>
+												
+											</div>
+										 	<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1" >Speciality</label>
+													<input  [(ngModel)]="user.Speciality" type="text"  class="form-control py-4" />
+												</div>
+												
+											</div> 
+											
+										</div>
+
+										<div class="form-group">
+											<label class="small mb-1">isAffected</label>
+											<select  [(ngModel)]="user.affected" class="form-control form-control-lg">
+												<option value="true">affected</option>
+												<option value="false" style="color: red;">not affected</option>
+											</select>
+
+											<label class="small mb-1">Office</label>
+											<select  [(ngModel)]="user.office" class="form-control form-control-lg">
+												<option value="Etap Axis capital">Etap Axis capital</option>
+												<option value="Etap Tataouine" >Etap Tataouine</option>
+											</select>
+										</div>
+										
+										<div class="form-row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="small mb-1">Password</label>
+
+													<input   [(ngModel)]="user.password" type="password" placeholder="Enter password" class="form-control py-4" />
+												</div>
+											</div>
+											
+										</div>
+										
+										<div class="form-group mt-4 mb-0">
+											<button class="btn btn-primary btn-block" (click)="updateUser()">Update Account</button>
+										</div>
+									
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		
+	</div>
+	
+</div>

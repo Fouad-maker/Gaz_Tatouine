@@ -1,0 +1,102 @@
+<div class="sb-nav-fixed">
+    <app-nav-bar></app-nav-bar>
+    <div id="layoutSidenav">
+    
+	<app-side-bar></app-side-bar>    
+	<div id="layoutSidenav_content">
+
+<div class="container spacer bg-image">
+    <div class="card card-default">
+        <strong class="card-heading card bg-primary text-white ">Creat Task</strong>
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="onSaveTask(f.value)">
+                <div class="form-group">
+                    <label class="control-labem">Task name</label>
+                    <input class="form-control" type="text" ngModel name="taskName" required>
+        
+                </div>
+        
+                <div class="form-group">
+                    <label class="control-labem">Description:</label>
+                    <input class="form-control" type="text" ngModel name="description" required>
+        
+				</div>
+				
+				<div class="form-group">
+                    <label class="control-labem">Affecration Date:</label>
+                    <input class="form-control" type="date" ngModel name="dateOfAffectaion" required>
+        
+				</div>
+				
+				<div class="form-group">
+                    <label class="control-labem"> Dead Line:</label>
+                    <input class="form-control" type="number" ngModel name="duresApproximative" required>
+        
+                </div>
+        
+                
+        
+                
+        
+                
+        
+        
+        
+                 <button [disabled]="!f.valid" type="submit" class="btn btn-danger">Save</button>   
+        
+        
+        
+            </form>
+        
+
+        </div>
+    </div>
+    
+</div>
+<!--  <div class="container">
+	<div class="col-md-6 col-md-offset-3">
+
+		<div class="panel panel-primary" *ngIf="mode==='ajout'">
+			<div class="panel-heading">New task</div>
+			<div class="panel-body">
+				<form #f="ngForm" (ngSubmit)="onSaveTask(f.value)">
+					<div class="form-group">
+						<label class="control-label">Task name : </label>
+						<input type="text" name="taskName" ngModel="" required class="form-control" />
+					</div>
+
+					<button type="submit" class="btn btn-danger" [disabled]="!f.valid">Save</button>
+
+				</form>
+			</div>
+		</div>
+-->
+		<div class="panel panel-primary" *ngIf="mode==='confirmation'">
+			<div class="panel-heading">Task added</div>
+			<div class="panel-body">
+				<ul class="list-group">
+					<li class="list-group-item">
+						Id : {{taskAdded.id}}
+					</li>
+					<li class="list-group-item">
+						Task name : {{taskAdded.taskName}}
+					</li>
+				</ul>
+				<ul class="list-group">
+					<li class="list-group-item">
+						Id : {{taskAdded.description}}
+					</li>
+					<li class="list-group-item">
+						Task name : {{taskAdded.dateOfAffectaion}}
+					</li>
+					<li class="list-group-item">
+						Task name : {{taskAdded.duresApproximative}}
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>	
+
+</div>

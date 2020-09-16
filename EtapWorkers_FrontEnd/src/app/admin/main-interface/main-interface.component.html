@@ -1,0 +1,131 @@
+
+<app-nav-bar></app-nav-bar>
+<div id="layoutSidenav">
+    
+
+        
+    
+    
+    
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <h1 class="mt-4">Tables</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Tables</li>
+                </ol>
+               
+                <div class="card mb-4">
+                    <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>office</th>
+                                            <th>Qualification</th>
+                                            <th>State</th>
+                                            
+                                            <th >
+                                                isAffected</th>
+                                        </tr>
+                                    
+                                </thead>
+                                
+
+                                <tbody>
+                                    <tr *ngFor="let c of users ">
+                                        <td class="clickable" [popoverOnHover]="true" [popover]="myPopover">
+                                            {{ c.nom }} {{ c.prenom }}</td>
+                                        <td>{{ c.office }}</td>
+                                        <td>{{ c.qualification }}</td>
+                                        <td>{{ c.state }}</td>
+                                         
+                                        <td *ngIf="c.affected===true">
+                                            <i style="color: #008000;" class="fas fa-calendar-check"></i>
+                                        </td>
+                                         
+                                        <td *ngIf="c.affected===false">
+                                            <i style="color: red;" class="fas fa-calendar-times"></i>
+
+                                        </td>
+
+                                        <td class="btn-group ">
+                                            <button  class="btn btn-success clickable" (click)="onEditUser(c.id)"><i class="fas fa-edit"></i></button>
+                                        </td>
+                                    </tr>
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">developped BY FOUED HADDED &copy; Your Website 2020</div>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<div class="container text-center mb-4">
+    <popover-content #myPopover title="Worker" placement="top right"
+                                    [animation]="true"
+                                    [closeOnClickOutside]="false"
+                                    [closeOnMouseOutside]="true">
+    
+                 
+  <!--    <div class="card card-default" *ngFor="let b of users">
+
+        <title class="card-heading card bg-primary">C V</title>
+      <div class="card-body">  
+        <strong>Name</strong>
+        <p>{{ b.nom }} {{ b.prenom }}</p>
+        <br>
+        <strong>Birthday</strong>
+        <p> {{ b.dateBirth }}</p>
+        in <p>{{ b.placeOfBirth}}</p>
+        <br>
+        <strong>Speciality</strong>
+        <p>{{ b.speciality }}</p>
+        <br>
+        <strong>Qualification</strong>
+        <p>{{ b.qualification }}</p>
+        <br>
+        <strong>Date join project</strong>
+        <p>{{ b.dateRejoitProjet }}</p>
+        <br>
+        <strong>office</strong>
+        <p>{{ b.office }}</p>
+        <br>
+        <div class="card card-success">Contact
+        <strong>email</strong>
+        <p>{{ b.email }}</p>
+        <hr><hr>
+            <strong>PHone Number</strong>
+            <p>{{ b.tel }}</p>
+    </div>
+      </div>
+
+    </div>   
+        
+
+    
+
+    
+    
+    
+-->    
+   <app-user></app-user> 
+    
+    
+    </popover-content>
+</div>
